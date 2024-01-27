@@ -1,14 +1,26 @@
 {
-    "license": "MIT",
-    "source-url": "git://github.com/jnthn/json-path.git",
-    "depends": ["JSON::Fast"],
-    "authors": [ "Jonathan Worthington <jonathan@edument.se>" ],
-    "auth": "cpan:JNTHN",
-    "provides": {"JSON::Path": "lib/JSON/Path.pm6"},
-    "name": "JSON::Path",
-    "description": "Implementation of the JSONPath data structure query language.",
-    "perl": "6.*",
-    "test-depends": [],
-    "build-depends": [],
-    "version": "1.7"
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Jonathan Worthington <jonathan@edument.se>"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "JSON::Fast"
+  ],
+  "description": "Implementation of the JSONPath data structure query language",
+  "license": "Artistic-2.0",
+  "name": "JSON::Path",
+  "perl": "6.c",
+  "provides": {
+    "JSON::Path": "lib/JSON/Path.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "git://github.com/raku-community-modules/JSON-Path.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "1.7"
 }

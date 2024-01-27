@@ -11,12 +11,12 @@ class JSON::Path {
         token TOP {
             <commandtree>
         }
-        
+
         token commandtree {
             [ <command> || <.giveup> ]
             [ $ || <commandtree> ]
         }
-        
+
         proto token command    { * }
         token command:sym<$>   { <sym> }
         token command:sym<.>   { <sym>? <ident> }
@@ -44,7 +44,7 @@ class JSON::Path {
             | '(' <.code>? ')'
             ]+
         }
-        
+
         method giveup() {
             die "JSON path parse error at position " ~ self.pos;
         }
@@ -184,7 +184,7 @@ class JSON::Path {
         }
 
         method command:sym<[?()]>($/) {
-            die "Evaluation of embedded Perl 6 code not allowed (construct with :allow-eval)"
+            die "Evaluation of embedded Raku code not allowed (construct with :allow-eval)"
                 unless $!allow-eval;
 
             use MONKEY-SEE-NO-EVAL;
@@ -268,3 +268,95 @@ sub jpath1($object, $expression) is rw is export {
 sub jpath_map(&coderef, $object, $expression) is export {
 	JSON::Path.new($expression).map($object, &coderef);
 }
+
+=begin pod
+
+=head1 NAME
+
+JSON::Path - Implementation of the JSONPath data structure query language
+
+=head1 SYNOPSIS
+
+=begin code :lang<raku>
+
+use JSON::Path;
+
+# Example data.
+my $data = {
+  kitchen => {
+    drawers => [
+      { knife => '🔪' },
+      { glass => '🍷' },
+      { knife => '🗡️' },
+    ]
+  }
+};
+
+# A query
+my $jp = JSON::Path.new('$.kitchen.drawers[*].knife');
+
+# The first result
+dd $jp.value($data);  # "🔪"
+
+# All results.
+dd $jp.values($data); # ("🔪", "🗡️").Seq
+
+# All paths where the results were found.
+dd $jp.paths($data);  # ("\$.kitchen.drawers[0].knife",
+                      #  "\$.kitchen.drawers[2].knife").Seq
+
+# Interleaved paths and values.
+dd $jp.paths-and-values($data);
+# ("\$.kitchen.drawers[0].knife", "🔪",
+#  "\$.kitchen.drawers[2].knife", "🗡️").Seq
+
+=end code
+
+=head1 DESCRIPTION
+
+The L<JSONPath query language|https://goessner.net/articles/JsonPath/>
+was designed for indexing into JSON documents. It plays the same role
+as XPath does for XML documents.
+
+This module implements C<JSON::Path>. However, it is not restricted to
+working on JSON input. In fact, it will happily work over any data
+structure made up of arrays and hashes.
+
+=head1 Query Syntax Summary
+
+The following syntax is supported:
+
+=begin code
+
+$           root node
+.key        index hash key
+['key']     index hash key
+[2]         index array element
+[0,1]       index array slice
+[4:5]       index array range
+[:5]        index from the beginning
+[-3:]       index to the end
+.*          index all elements
+[*]         index all elements
+[?(expr)]   filter on (Raku) expression
+..key       search all descendants for hash key
+
+=end code
+
+A query that is not rooted from C<$> or specified using C<..> will be
+evaluated from the document root (that is, same as an explicit C<$> at
+the start).
+
+=head1 AUTHOR
+
+Jonathan Worthington
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright 2012 - 2024 Jonathan Worthington
+
+Copyright 2024 Raku Community
+
+This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+
+=end pod

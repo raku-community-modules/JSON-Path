@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/lizmat/JSON-Path/actions/workflows/test.yml/badge.svg)](https://github.com/lizmat/JSON-Path/actions)
+[![Actions Status](https://github.com/raku-community-modules/JSON-Path/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/JSON-Path/actions) [![Actions Status](https://github.com/raku-community-modules/JSON-Path/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/JSON-Path/actions) [![Actions Status](https://github.com/raku-community-modules/JSON-Path/actions/workflows/windows.yml/badge.svg)](https://github.com/raku-community-modules/JSON-Path/actions)
 
 NAME
 ====

@@ -53,32 +53,30 @@ Query Syntax Summary
 
 The following syntax is supported:
 
-    $           root node
-    .key        index hash key
-    ['key']     index hash key
-    [2]         index array element
-    [0,1]       index array slice
-    [4:5]       index array range
-    [:5]        index from the beginning
-    [-3:]       index to the end
-    .*          index all elements
-    [*]         index all elements
-    [?(expr)]   filter on (Raku) expression
-    ..key       search all descendants for hash key
+<table class="pod-table">
+<thead><tr>
+<th>query</th> <th>description</th>
+</tr></thead>
+<tbody>
+<tr> <td>$</td> <td>root node</td> </tr> <tr> <td>.key</td> <td>index hash key</td> </tr> <tr> <td>[&#39;key&#39;]</td> <td>index hash key</td> </tr> <tr> <td>[2]</td> <td>index array element</td> </tr> <tr> <td>[0,1]</td> <td>index array slice</td> </tr> <tr> <td>[4:5]</td> <td>index array range</td> </tr> <tr> <td>[:5]</td> <td>index from the beginning</td> </tr> <tr> <td>[-3:]</td> <td>index to the end</td> </tr> <tr> <td>.*</td> <td>index all elements</td> </tr> <tr> <td>[*]</td> <td>index all elements</td> </tr> <tr> <td>[?(expr)]</td> <td>filter on (Raku) expression</td> </tr> <tr> <td>..key</td> <td>search all descendants for hash key</td> </tr>
+</tbody>
+</table>
 
 A query that is not rooted from `$` or specified using `..` will be evaluated from the document root (that is, same as an explicit `$` at the start).
 
-AUTHOR
-======
+AUTHORS
+=======
 
-Jonathan Worthington
+  * Jonathan Worthington
+
+Source can be located at: https://github.com/raku-community-modules/JSON-Path . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================
 
 Copyright 2012 - 2024 Jonathan Worthington
 
-Copyright 2024 Raku Community
+Copyright 2024 - 2025 Raku Community
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

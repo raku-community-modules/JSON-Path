@@ -5,20 +5,34 @@
   ],
   "build-depends": [
   ],
-  "depends": [
-    "JSON::Fast"
-  ],
+  "depends": {
+    "runtime": {
+      "requires": [
+        "JSON::Fast:ver<0.19+>:auth<cpan:TIMOTIMO>"
+      ]
+    }
+  },
   "description": "Implementation of the JSONPath data structure query language",
   "license": "Artistic-2.0",
   "name": "JSON::Path",
   "perl": "6.c",
+  "production": true,
   "provides": {
     "JSON::Path": "lib/JSON/Path.rakumod"
   },
+  "raku": "6.d",
   "resources": [
   ],
   "source-url": "https://github.com/raku-community-modules/JSON-Path.git",
+  "support": {
+    "bugtracker": "https://github.com/raku-community-modules/JSON-Path/issues",
+    "email": "community@raku.org",
+    "source": "git://github.com/raku-community-modules/JSON-Path.git"
+  },
   "tags": [
+    "JSON",
+    "JSONPATH",
+    "QUERY"
   ],
   "test-depends": [
   ],

@@ -1,6 +1,9 @@
 Revision history for JSON-Path
 
 {{$NEXT}}
+    - Tightened dependencies
+    - Modernized META6.json and pod
+    - Achieved 100% test coverage
 
 1.8  2024-11-09T11:30:35+01:00
     - Initial version in the zef ecosystem

@@ -1,8 +1,8 @@
-use Test;
-plan 5;
-
 use JSON::Path;
 use JSON::Fast;
+use Test;
+
+plan 5;
 
 my $object = {
     'foo' => [
@@ -42,3 +42,5 @@ my $object = {
     is(@values.elems, 1, 'Returned one result.');
     is(@values[0]<bar>, 3, 'Correct result.');
 }
+
+# vim: expandtab shiftwidth=4

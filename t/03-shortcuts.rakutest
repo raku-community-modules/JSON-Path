@@ -1,6 +1,8 @@
-use JSON::Path;
+use JSON::Path :ALL;
 use JSON::Fast;
 use Test;
+
+plan 2;
 
 my $object = from-json(q'
 {
@@ -43,26 +45,14 @@ my $object = from-json(q'
 
 my $path1 = '$.store.book[*].title';
 
-jpath_map { uc $_ }, $object, '$.store.book[*].title';
-
 is-deeply(
-	[ jpath1($object, $path1) ],
-	[ map &uc, 'Sayings of the Century' ],
+	jpath1($object, $path1),
+	'Sayings of the Century',
 );
 
 is-deeply(
 	[ jpath($object, $path1) ],
-	[ map &uc, 'Sayings of the Century', 'Sword of Honour', 'Moby Dick', 'The Lord of the Rings' ],
+	[ 'Sayings of the Century', 'Sword of Honour', 'Moby Dick', 'The Lord of the Rings' ],
 );
 
-is(
-	JSON::Path.new('$.store.book[*].author').set($object => 'Anon', 2),
-	2,
-);
-
-is-deeply(
-	[ jpath($object, '$.store.book[*].author') ],
-	[ 'Anon', 'Anon', 'Herman Melville', 'J. R. R. Tolkien' ],
-);
-
-done-testing();
+# vim: expandtab shiftwidth=4

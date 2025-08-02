@@ -2,6 +2,8 @@ use JSON::Path;
 use JSON::Fast;
 use Test;
 
+plan 24;
+
 my $object = from-json(q'
 {
 	"store": {
@@ -58,6 +60,8 @@ given $path2.values($object) {
     isa-ok(.[0], Hash, "Got expected hash result");
     is(.[0]<isbn>, "0-395-19395-8", "Got the correct hash");
 }
+
+dies-ok { JSON::Path.new("&gshk") }, 'garbage input should die';
 
 dies-ok({
     my $path3 = JSON::Path.new('$..book[?(.<author> ~~ rx:i/tolkien/)]');
@@ -167,4 +171,4 @@ is-deeply $path10.paths($object).sort.list,
     }
 }
 
-done-testing;
+# vim: expandtab shiftwidth=4

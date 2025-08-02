@@ -1,6 +1,6 @@
 use JSON::Fast:ver<0.19+>:auth<cpan:TIMOTIMO>;
 
-class JSON::Path:ver<1.8>:auth<zef:raku-community-modules> {
+class JSON::Path:ver<1.9>:auth<zef:raku-community-modules> {
     has $!path;
     has &!collector;
     has Bool $.allow-eval = False;

@@ -4,7 +4,7 @@
   "specVersion": "1.6",
   "version": 1,
   "metadata": {
-    "timestamp": "2025-08-02T18:34:00+00:00",
+    "timestamp": "2025-08-02T18:38:04+00:00",
     "lifecycles": [
       {
         "phase": "pre-build"
@@ -19,7 +19,7 @@
     "component": {
       "type": "library",
       "mime-type": "text/plain",
-      "bom-ref": "pkg:raku/zef:raku-community-modules/JSON::Path@1.8",
+      "bom-ref": "pkg:raku/zef:raku-community-modules/JSON::Path@1.9",
       "authors": [
         {
           "bom-ref": "JonathanWorthington",
@@ -29,7 +29,7 @@
       "publisher": "zef",
       "group": "zef:raku-community-modules",
       "name": "JSON::Path",
-      "version": "1.8",
+      "version": "1.9",
       "description": "Implementation of the JSONPath data structure query language",
       "scope": "required",
       "licenses": [
@@ -41,10 +41,10 @@
           }
         }
       ],
-      "purl": "pkg:raku/zef:raku-community-modules/JSON::Path@1.8",
+      "purl": "pkg:raku/zef:raku-community-modules/JSON::Path@1.9",
       "externalReferences": [
         {
-          "url": "https://raku.land/zef:raku-community-modules/JSON::Path?v=1.8",
+          "url": "https://raku.land/zef:raku-community-modules/JSON::Path?v=1.9",
           "type": "documentation"
         },
         {
@@ -199,7 +199,7 @@
   ],
   "externalReferences": [
     {
-      "url": "https://raku.land/zef:raku-community-modules/JSON::Path?v=1.8",
+      "url": "https://raku.land/zef:raku-community-modules/JSON::Path?v=1.9",
       "type": "documentation"
     },
     {

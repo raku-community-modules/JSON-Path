@@ -1,6 +1,8 @@
 Revision history for JSON-Path
 
 {{$NEXT}}
+
+1.9  2025-08-02T20:49:48+02:00
     - Tightened dependencies
     - Modernized META6.json and pod
     - Achieved 100% test coverage

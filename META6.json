@@ -8,7 +8,7 @@
   "depends": {
     "runtime": {
       "requires": [
-        "JSON::Fast:ver<0.19+>:auth<cpan:TIMOTIMO>"
+        "JSON::Fast:ver<0.20.1+>:auth<zef:timo>"
       ]
     }
   },
@@ -36,5 +36,5 @@
   ],
   "test-depends": [
   ],
-  "version": "1.9"
+  "version": "1.10"
 }

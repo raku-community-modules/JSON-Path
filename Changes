@@ -2,6 +2,10 @@ Revision history for JSON-Path
 
 {{$NEXT}}
 
+1.10  2026-06-24T23:17:15+02:00
+    - Bump dependency on JSON::Path
+    - Update copyright year
+
 1.9  2025-08-02T20:49:48+02:00
     - Tightened dependencies
     - Modernized META6.json and pod

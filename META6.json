@@ -8,14 +8,13 @@
   "depends": {
     "runtime": {
       "requires": [
-        "JSON::Fast:ver<0.20.1+>:auth<zef:timo>"
+        "JSON::Fast:ver<0.21+>:auth<zef:timo>"
       ]
     }
   },
   "description": "Implementation of the JSONPath data structure query language",
   "license": "Artistic-2.0",
   "name": "JSON::Path",
-  "perl": "6.c",
   "production": true,
   "provides": {
     "JSON::Path": "lib/JSON/Path.rakumod"
@@ -36,5 +35,5 @@
   ],
   "test-depends": [
   ],
-  "version": "1.10"
+  "version": "1.11"
 }

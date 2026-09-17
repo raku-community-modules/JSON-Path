@@ -2,6 +2,9 @@ Revision history for JSON-Path
 
 {{$NEXT}}
 
+1.11  2026-09-17T13:31:27+02:00
+    - Bump dependency to make it RakuAST ready
+
 1.10  2026-06-24T23:17:15+02:00
     - Bump dependency on JSON::Path
     - Update copyright year
